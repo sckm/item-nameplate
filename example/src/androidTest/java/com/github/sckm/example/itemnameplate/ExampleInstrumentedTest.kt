@@ -1,4 +1,4 @@
-package com.github.sckm.itemnameplate
+package com.github.sckm.example.itemnameplate
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.github.sckm.itemnameplate", appContext.packageName)
+        assertEquals("com.github.sckm.example.itemnameplate", appContext.packageName)
     }
 }

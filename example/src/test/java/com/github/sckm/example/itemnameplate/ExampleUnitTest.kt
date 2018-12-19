@@ -1,4 +1,4 @@
-package com.github.sckm.itemnameplate
+package com.github.sckm.example.itemnameplate
 
 import org.junit.Test
 
