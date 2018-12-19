@@ -8,6 +8,7 @@ import com.github.sckm.example.itemnameplate.groupie.ColorfulGridItem
 import com.github.sckm.example.itemnameplate.groupie.GridItemsHeader
 import com.github.sckm.example.itemnameplate.groupie.SimpleItemsHeader
 import com.github.sckm.example.itemnameplate.groupie.SimpleTextItem
+import com.github.sckm.itemnameplate.groupie.GroupieItemNameplateDecoration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                 spanSizeLookup = groupAdapter.spanSizeLookup
             }
             adapter = groupAdapter
+            addItemDecoration(GroupieItemNameplateDecoration(this@MainActivity))
         }
 
     }
