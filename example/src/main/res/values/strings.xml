@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">item-nameplate</string>
+    <string name="groupie_example_button">Groupie Example</string>
+    <string name="groupie_hyperion_example_button">Groupie Hyperion Example</string>
 </resources>

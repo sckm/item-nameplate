@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hyperionitemnameplategroupie</string>
+    <string name="item_decoration_module_title">Item Nameplate</string>
+    <string name="item_decoration_module_description">Show name of Groupie item.</string>
+</resources>
