@@ -1,50 +1,52 @@
 package com.github.sckm.example.itemnameplate
 
-import android.graphics.Color
+import android.graphics.Rect
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
-import com.github.sckm.example.itemnameplate.groupie.ColorfulGridItem
-import com.github.sckm.example.itemnameplate.groupie.GridItemsHeader
-import com.github.sckm.example.itemnameplate.groupie.SimpleItemsHeader
-import com.github.sckm.example.itemnameplate.groupie.SimpleTextItem
-import com.github.sckm.itemnameplate.groupie.GroupieItemNameplateDecoration
+import android.support.v7.widget.RecyclerView
+import android.view.View
+import android.widget.TextView
 import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_groupie.*
 
 class MainActivity : AppCompatActivity() {
-    private val colors by lazy {
-        listOf(
-            Color.rgb(0xff, 0xd6, 0xd6),
-            Color.rgb(0xd6, 0xff, 0xff),
-            Color.rgb(0xd6, 0xff, 0xd6),
-            Color.rgb(0xd6, 0xea, 0xff),
-            Color.rgb(0xff, 0xff, 0xd6)
+
+    private val items by lazy {
+        mutableListOf(
+            GroupieExampleItem(),
+            GroupieHyperionExampleItem()
         )
     }
 
-    private val items by lazy {
-        val items = mutableListOf(
-            SimpleItemsHeader(),
-            SimpleTextItem("1st simple item "),
-            SimpleTextItem("2nd simple item "),
-            SimpleTextItem("3rd simple item ")
-        )
-
-        items += GridItemsHeader()
-        items += (1..12).map { ColorfulGridItem(it.toString(), colors[it % colors.size]) }
-        items
+    private val offsetItemDecoration by lazy {
+        object : RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(
+                outRect: Rect?,
+                view: View?,
+                parent: RecyclerView?,
+                state: RecyclerView.State?
+            ) {
+                outRect ?: return
+                parent ?: return
+                val density = parent.context.resources.displayMetrics.density
+                val horizontalOffset = (8 * density).toInt()
+                val verticalOffset = (4 * density).toInt()
+                outRect.set(horizontalOffset, verticalOffset, horizontalOffset, verticalOffset)
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupGroupieItems()
+        setupItems()
     }
 
-    private fun setupGroupieItems() {
+    private fun setupItems() {
         val groupAdapter = GroupAdapter<ViewHolder>().apply {
             addAll(items)
             spanCount = 3
@@ -55,8 +57,29 @@ class MainActivity : AppCompatActivity() {
                 spanSizeLookup = groupAdapter.spanSizeLookup
             }
             adapter = groupAdapter
-            addItemDecoration(GroupieItemNameplateDecoration(this@MainActivity))
+            addItemDecoration(offsetItemDecoration)
         }
+    }
 
+    abstract class ExamplePageButtonItem : Item<ViewHolder>() {
+        override fun getLayout(): Int = R.layout.item_exaple_page_button
+    }
+
+    class GroupieExampleItem : ExamplePageButtonItem() {
+        override fun bind(viewHolder: ViewHolder, position: Int) {
+            (viewHolder.root as TextView).setText(R.string.groupie_example_button)
+            viewHolder.root.setOnClickListener {
+                GroupieActivity.startActivity(viewHolder.root.context)
+            }
+        }
+    }
+
+    class GroupieHyperionExampleItem : ExamplePageButtonItem() {
+        override fun bind(viewHolder: ViewHolder, position: Int) {
+            (viewHolder.root as TextView).setText(R.string.groupie_hyperion_example_button)
+            viewHolder.root.setOnClickListener {
+                HyperionGroupieActivity.startActivity(viewHolder.root.context)
+            }
+        }
     }
 }
