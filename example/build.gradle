@@ -26,6 +26,7 @@ dependencies {
     implementation project(':item-nameplate-groupie')
     implementation project(':hyperion-item-nameplate-groupie')
     implementation project(':item-nameplate-view-holder')
+    implementation project(':hyperion-item-nameplate-view-holder')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'

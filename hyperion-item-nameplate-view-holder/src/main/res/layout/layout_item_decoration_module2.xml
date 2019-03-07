@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:padding="@dimen/hype_plugin_padding"
+    >
+
+    <ImageView
+        android:layout_width="@dimen/hype_plugin_icon_size"
+        android:layout_height="@dimen/hype_plugin_icon_size"
+        android:layout_gravity="center_vertical"
+        android:src="@android:drawable/ic_menu_edit"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_holder_item_decoration_module_title"
+            android:textColor="@color/hype_plugin_color_selector"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_holder_item_decoration_module_description"
+            android:textColor="@color/hype_plugin_color_selector"
+            />
+    </LinearLayout>
+
+</LinearLayout>
