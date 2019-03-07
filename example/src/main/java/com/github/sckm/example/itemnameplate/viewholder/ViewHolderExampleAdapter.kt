@@ -39,7 +39,7 @@ class ViewHolderExampleAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
         var cur = 0
         l.forEach { (nextCount, viewType) ->
-            if (position <= cur + nextCount) {
+            if (position < cur + nextCount) {
                 return viewType.ordinal
             }
             cur += nextCount
@@ -65,7 +65,7 @@ class ViewHolderExampleAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
         var cur = 0
 
         fun acc(count: Int, runnable: (Int) -> Unit): Boolean {
-            val ret = if (cur <= position && position <= cur + count) {
+            val ret = if (cur <= position && position < cur + count) {
                 val posInSameViews = position - cur
                 runnable(posInSameViews)
                 true

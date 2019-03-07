@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         mutableListOf(
             GroupieExampleItem(),
             GroupieHyperionExampleItem(),
+            ViewHolderExampleItem(),
             ViewHolderHyperionExampleItem()
         )
     }
@@ -77,11 +78,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    class ViewHolderHyperionExampleItem : ExamplePageButtonItem() {
+    class ViewHolderExampleItem : ExamplePageButtonItem() {
         override fun bind(viewHolder: ViewHolder, position: Int) {
             (viewHolder.root as TextView).setText(R.string.view_holder_example_button)
             viewHolder.root.setOnClickListener {
                 ViewHolderActivity.startActivity(viewHolder.root.context)
+            }
+        }
+    }
+
+    class ViewHolderHyperionExampleItem : ExamplePageButtonItem() {
+        override fun bind(viewHolder: ViewHolder, position: Int) {
+            (viewHolder.root as TextView).setText(R.string.view_holder_hyperion_example_button)
+            viewHolder.root.setOnClickListener {
+                HyperionViewHolderActivity.startActivity(viewHolder.root.context)
             }
         }
     }
