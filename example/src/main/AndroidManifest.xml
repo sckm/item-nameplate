@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".HyperionGroupieActivity" />
         <activity android:name=".GroupieActivity" />
+        <activity android:name=".HyperionViewHolderActivity" />
         <activity android:name=".ViewHolderActivity" />
     </application>
 
