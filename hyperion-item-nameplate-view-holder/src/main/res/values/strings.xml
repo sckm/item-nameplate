@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hyperionitemnameplateviewholder</string>
+    <string name="view_holder_item_decoration_module_title">ViewHolder Item Nameplate</string>
+    <string name="view_holder_item_decoration_module_description">Show name of ViewHolder.</string>
+</resources>

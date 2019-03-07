@@ -1,1 +1,1 @@
-include ':example', ':item-nameplate-groupie', ':hyperion-item-nameplate-groupie', ':item-nameplate-view-holder'
+include ':example', ':item-nameplate-groupie', ':hyperion-item-nameplate-groupie', ':item-nameplate-view-holder', ':hyperion-item-nameplate-view-holder'
