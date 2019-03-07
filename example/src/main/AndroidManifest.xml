@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HyperionGroupieActivity" />
-        <activity android:name=".GroupieActivity"></activity>
+        <activity android:name=".GroupieActivity" />
+        <activity android:name=".ViewHolderActivity" />
     </application>
 
 </manifest>
