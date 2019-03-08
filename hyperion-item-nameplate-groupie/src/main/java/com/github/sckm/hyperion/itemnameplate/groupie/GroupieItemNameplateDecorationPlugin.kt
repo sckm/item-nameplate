@@ -5,8 +5,8 @@ import com.willowtreeapps.hyperion.plugin.v1.Plugin
 import com.willowtreeapps.hyperion.plugin.v1.PluginModule
 
 @AutoService(Plugin::class)
-class ItemNameplateDecorationPlugin : Plugin() {
+class GroupieItemNameplateDecorationPlugin : Plugin() {
     override fun createPluginModule(): PluginModule? {
-        return ItemNameplateDecorationModule()
+        return GroupieItemNameplateDecorationModule()
     }
 }

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.willowtreeapps.hyperion.plugin.v1.PluginModule
 import com.github.sckm.itemnameplate.groupie.GroupieItemNameplateDecoration
 
-class ItemNameplateDecorationModule : PluginModule() {
+class GroupieItemNameplateDecorationModule : PluginModule() {
 
   private lateinit var itemDecoration: RecyclerView.ItemDecoration
 
