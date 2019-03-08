@@ -48,7 +48,7 @@ bintray {
     key = properties.getProperty('bintrayKey') ?: ""
 
     group = 'com.github.sckm'
-    version = '0.0.1'
+    version = ITEM_NAMEPLATE_VERSION
     configurations = ['archives']
 
     pkg {
@@ -59,7 +59,7 @@ bintray {
         licenses = ['Apache-2.0']
         websiteUrl = 'https://github.com/sckm/item-nameplate'
         version {
-            name = '0.0.1'
+            name = ITEM_NAMEPLATE_VERSION
             desc = 'Android library for showing list item name'
         }
     }
