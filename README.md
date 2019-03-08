@@ -11,7 +11,7 @@ Before | After
 ## Usage
 ```
 dependencies{
-    // if not use library for RecyclerView Adapter(Groupie, Exoxy, ...)
+    // if not use library for RecyclerView Adapter(Groupie, Epoxy, ...)
     implementation 'com.github.sckm:hyperion-item-nameplate-view-holder:0.1.0'
     
     // if use Groupie
